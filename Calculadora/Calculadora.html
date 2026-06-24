@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .form {
+            --bg-light: #efefef;
+            --bg-dark: #707070;
+            --clr: #ff0000;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form .input-span {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form input[type="number"] {
+            border-radius: 0.5rem;
+            padding: 1rem 0.75rem;
+            width: 100%;
+            border: none;
+            background-color: var(--bg-light);
+            outline: 2px solid var(--bg-dark);
+            box-sizing: border-box;
+        }
+
+        .form input[type="number"]:focus {
+            outline: 2px solid var(--clr);
+        }
+
+        .label {
+            align-self: flex-start;
+            color: var(--clr);
+            font-weight: bold;
+        }
+
+        .form .submit {
+            padding: 1rem 0.75rem;
+            width: 100%;
+            border-radius: 3rem;
+            background-color: var(--bg-dark);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .form .submit:hover {
+            background-color: var(--clr);
+            color: white;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="form">
+
+        <span class="input-span">
+            <label class="label" for="n1">Primer número</label>
+            <input type="number" id="n1">
+        </span>
+
+        <span class="input-span">
+            <label class="label" for="n2">Segundo número</label>
+            <input type="number" id="n2">
+        </span>
+
+        <span class="input-span">
+            <label class="label">Operación</label>
+
+            <input class="submit" type="button" value="Sumar ( + )" onclick="suma(num1, num2)">
+            <input class="submit" type="button" value="Restar ( - )" onclick="resta(num1, num2)">
+            <input class="submit" type="button" value="Multiplicar ( × )" onclick="multiplicar(num1, num2)">
+            <input class="submit" type="button" value="Dividir ( ÷ )" onclick="dividir(num1, num2)">
+        </span>
+
+    </form>
+
+    <h2 id="result">Resultado</h2>
+
+    <script>
+
+        let num1 = parseFloat(document.getElementById("n1").value);
+        let num2 = parseFloat(document.getElementById("n2").value);
+
+        function suma(num1, num2) {
+            document.getElementById("result").innerHTML = "La suma es: " + (num1 + num2);
+        }
+
+        function resta(num1, num2) {
+            document.getElementById("result").innerHTML = "La resta es: " + (num1 - num2);
+        }
+
+        function multiplicar(num1, num2) {
+            document.getElementById("result").innerHTML = "La multiplicación es: " + (num1 * num2);
+        }
+
+        function dividir(num1, num2) {
+            if (num1 == 0 && num2 == 0){
+
+                document.getElementById("result").innerHTML = "No se puede dividir entre 0"
+            }
+            else{
+                document.getElementById("result").innerHTML = "La división es: " + (num1 / num2);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
