@@ -7,22 +7,25 @@
     <title>Iniciar Sesión</title>
     <style>
         body{
+            background-color: rgb(32, 32, 32);
+            color: rgb(32, 32, 32);
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            padding: 30px;
+            font-family: Blender;
         }
         .form {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        max-width: 350px;
+        max-width: 500px;
+        width: 500;
+        min-width: 100;
         background-color: #353535;
         padding: 20px;
         border-radius: 10px;
         position: relative;
-        }
-
-        .message {
-        color: rgba(255, 0, 0, 0.822);
-        font-size: 14px;
         }
 
         .flex {
@@ -47,7 +50,7 @@
         position: absolute;
         left: 10px;
         top: 15px;
-        color: grey;
+        color: rgb(237, 72, 72);
         font-size: 0.9em;
         cursor: text;
         transition: 0.3s ease;
@@ -65,16 +68,9 @@
         }
 
         .form label .input:valid + span {
-        color: rgb(57, 224, 65);
+        color: rgb(237, 72, 72)
         }
 
-        .input01 {
-        width: 100%;
-        padding: 10px 10px 20px 10px;
-        outline: 0;
-        border: 1px solid rgba(105, 105, 105, 0.397);
-        border-radius: 5px;
-        }
 
         .form label .input01 + span {
         position: absolute;
@@ -98,7 +94,7 @@
         }
 
         .form label .input01:valid + span {
-        color: green;
+        color: rgb(237, 72, 72)
         }
 
         .fancy {
@@ -122,6 +118,7 @@
         transition: all 0.3s ease-in-out;
         user-select: none;
         font-size: 13px;
+        width: 500px;
         }
 
         .fancy::before {
@@ -147,7 +144,7 @@
         transition: all 0.3s ease-in-out;
         text-transform: lowercase;
         text-decoration: none;
-        color: #ff0000;
+        color: rgb(237, 72, 72);
         transform: translateX(30%);
         }
 
@@ -157,7 +154,7 @@
         top: -2px;
         left: 0.625rem;
         position: absolute;
-        background: white;
+        background: rgb(237, 72, 72);
         transition: width 0.5s ease-out, left 0.3s ease-out;
         }
 
@@ -167,7 +164,7 @@
         right: 1.875rem;
         bottom: -2px;
         position: absolute;
-        background: rgb(255, 0, 0);
+        background: rgb(237, 72, 72);
         transition: width 0.5s ease-out, right 0.3s ease-out;
         }
 
@@ -177,13 +174,13 @@
         right: 0.625rem;
         bottom: -2px;
         position: absolute;
-        background: rgb(255, 0, 0);
+        background: rgb(237, 72, 72);
         transition: width 0.5s ease-out, right 0.3s ease-out;
         }
 
         .fancy:hover {
         color: rgb(156, 45, 45);
-        background: #ff0000;
+        background: rgb(216, 28, 28)
         }
 
         .fancy:hover::before {
@@ -219,32 +216,19 @@
 <!-- From Uiverse.io by somshri16 --> 
     <form class="form">
         
-        <div class="flex">
-            <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>first name</span>
-            </label>
 
-            <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>last name</span>
-            </label>
-        </div>  
+
                 
         <label>
-            <input required="" placeholder="" type="email" class="input">
-            <span>email</span>
+            <input required="" placeholder="" type="email" class="input" id="email">
+            <span>Email</span>
         </label> 
             
         <label>
-            <input required="" type="tel" placeholder="" class="input">
-            <span>contact number</span>
+            <input required="" type="text" placeholder="" class="input" id="contra">
+            <span>Contraseña</span>
         </label>
-        <label>
-            <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-            <span>message</span>
-        </label>
-        
+
         <button class="fancy" href="#">
         <span class="top-key"></span>
         <span class="text">submit</span>
